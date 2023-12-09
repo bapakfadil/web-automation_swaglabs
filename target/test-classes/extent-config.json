@@ -1,0 +1,13 @@
+{
+  "theme": "DARK",
+  "encoding": "utf-8",
+  "protocol": "HTTPS",
+  "timelineEnabled": false,
+  "offlineMode": true,
+  "thumbnailForBase64": false,
+  "documentTitle": "SwagLabs-Reports",
+  "reportName": "SwagLabs-Reports",
+  "timeStampFormat": "DD,MM,YYYY HH:mm:ss a",
+  "js": "",
+  "css": ""
+}
