@@ -1,0 +1,19 @@
+{
+  "name": "Swag Labs Web Automation",
+  "version": "0.0.1",
+  "description": "Web Automation Test for SwagLabs E-Commerce web demo applications",
+  "author": "Abi fadila",
+  "license": "MIT",
+  "homepage": "https://github.com/bapakfadil/web-automation_swaglabs.git#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bapakfadil/web-automation_swaglabs.git"
+  },
+  "bugs": {
+    "url": "none"
+  },
+  "engines": {
+    "Java": "17",
+    "Maven": "3.9.2"
+  }
+}
