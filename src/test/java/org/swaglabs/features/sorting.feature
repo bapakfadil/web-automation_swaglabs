@@ -8,7 +8,7 @@ Feature: Sort Products
   I want to sort the products by price
   So that I can easily find the products I want
 
-  @Test @Sort
+  @Stage @Sort
   Scenario Outline: Sort products by <sortName>
     Given I am on the products page
     When I chose <sortName> and clicked option <value>

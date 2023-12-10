@@ -25,8 +25,8 @@ import java.time.Duration;
         plugin = {
                 "pretty",
                 "html:src/reports/cucumber-reports/test-report.html",
-                "json:src/reports/cucumber-reports/test-report.json",
-                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+                //"json:src/reports/cucumber-reports/test-report.json",
+                //"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         }
 )
 
@@ -40,7 +40,7 @@ public class TestRun extends AbstractTestNGCucumberTests {
     @BeforeMethod
     public void setupBrowser() {
         String url = "https://www.saucedemo.com/";
-        WebDriver webDriver = new BrowserFactory().launchBrowser("chrome");
+        WebDriver webDriver = new BrowserFactory().launchBrowser("headless chrome");
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         DriverFactory.getInstance().setDriver(webDriver);

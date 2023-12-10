@@ -51,12 +51,15 @@ public class Challenge7Step {
     public void userVerifyLoginResult(String result) {
         if (result.equals("success")){
             loginPage.loginVerified();
-            System.out.println("Login Success!");
+            KeyWords.takeScreenshot("login-success");
         } else if (result.equals("failed")) {
-            loginPage.loginError();
-            System.out.println("Login Failed!");
+            if (KeyWords.isElementDisplayed(loginPage.errorBtn)){
+                loginPage.loginError();
+            } else {
+                System.out.println("There's an error with error logic :| ");
+            }
         } else {
-            System.out.println("Ada yg error pasti :(");
+            System.out.println("There's must be an error with the step logic.");
         }
     }
 

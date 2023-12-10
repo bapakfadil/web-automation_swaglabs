@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.swaglabs.utilities.KeyWords;
+import org.testng.Assert;
 
 import java.time.Duration;
 
@@ -38,8 +39,8 @@ public class LoginPage {
     @FindBy(xpath = "//*[@id='header_container']/div[2]/span")
     private WebElement productTitle;
 
-    @FindBy(className = "error-button")
-    private WebElement errorBtn;
+    @FindBy(xpath = "//*[@id='login_button_container']/div/form/div[3]/h3")
+    public WebElement errorBtn;
 
     public void verifyLoginPage(){
         KeyWords.waitElementToBeDisplayed(loginLogo);
@@ -57,10 +58,20 @@ public class LoginPage {
     }
 
     public void loginVerified(){
-        KeyWords.isElementDisplayed(productTitle);
+        Assert.assertTrue(KeyWords.isElementDisplayed(productTitle), "Login success.");
+
     }
 
     public void loginError(){
-        KeyWords.isElementDisplayed(errorBtn);
+        String message1 = "Epic sadface: Username and password do not match any user in this service";
+        String message2 = "Epic sadface: Sorry, this user has been locked out.";
+        String actualMessage = errorBtn.getText();
+        if (actualMessage.equals(message1)){
+            Assert.assertEquals(actualMessage, message1);
+            System.out.println(message1);
+        } else if (actualMessage.equals(message2)) {
+            Assert.assertEquals(actualMessage, message2);
+            System.out.println(message2);
+        }
     }
 }
