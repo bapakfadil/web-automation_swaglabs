@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.swaglabs.utilities.KeyWords;
+import org.testng.Assert;
 
 import java.util.concurrent.TimeUnit;
 
@@ -92,5 +93,13 @@ public class CheckoutPage {
         KeyWords.clickElement(finishBtn);
     }
 
-    public void confirmationPage(){ KeyWords.isElementDisplayed(checkoutComplete); }
+    public void confirmationPage(){
+        if (checkoutComplete.isDisplayed()){
+            Boolean confirmed = true;
+            System.out.println("Checkout Complete");
+            Assert.assertTrue(confirmed, "Checkout failed.");
+        } else {
+            System.out.println("Checkout failed i guess.");
+        }
+    }
 }

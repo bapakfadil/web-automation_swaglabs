@@ -6,7 +6,7 @@
 Feature: Product Checkout
   As a user, I want to be able to log in to the website, find a product, and proceed through the checkout flow.
 
-  @Stage @Checkout
+  @Test @Checkout
   Scenario: Successful checkout
     Given I am on the products page
     When I click add to cart button on products

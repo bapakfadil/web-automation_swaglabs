@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.swaglabs.utilities.KeyWords;
-
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -16,7 +15,6 @@ import java.util.concurrent.TimeUnit;
 
 public class ProductPage {
     WebDriver driver;
-    Boolean isExist;
 
     public ProductPage(WebDriver driver){
         this.driver = driver;
@@ -30,13 +28,12 @@ public class ProductPage {
     @FindBy(xpath = "//*[@id='header_container']/div[2]/div/span/select")
     private WebElement productSortBtn;
 
+    @FindBy(xpath = "//*[@class='inventory_list']/div/div/div/a/div")
+    private WebElement firstProductInList;
+
     public void verifyProductPage(){
         KeyWords.isElementDisplayed(productPageLogo);
         KeyWords.isElementDisplayed(productSortBtn);
-    }
-
-    public void clickSortBtn(){
-        productSortBtn.click();
     }
 
     public void optionSelect(String value){

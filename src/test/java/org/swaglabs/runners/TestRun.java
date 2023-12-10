@@ -25,8 +25,8 @@ import java.time.Duration;
         plugin = {
                 "pretty",
                 "html:src/reports/cucumber-reports/test-report.html",
-                //"json:src/reports/cucumber-reports/test-report.json",
-                //"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+                "json:src/reports/cucumber-reports/test-report.json",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         }
 )
 

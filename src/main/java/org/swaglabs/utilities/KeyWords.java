@@ -10,6 +10,7 @@ import org.swaglabs.factories.DriverFactory;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.List;
 
 /**
  * @author abifadila on 08/12/2023
